@@ -1,4 +1,5 @@
 package phantm.util
+
 import scala.io.Source
 import phantm.Settings
 
@@ -7,7 +8,7 @@ case object ENotice extends ErrorTag
 
 class Reporter(mainFiles: List[String]) {
 
-    case class Error(val message: String, val pos: Positional, var tags: Set[ErrorTag]) {
+    case class Error(message: String, pos: Positional, var tags: Set[ErrorTag]) {
         override def equals(o: Any): Boolean = o match {
             case e2: Error =>
                 if (Settings.get.compactErrors) {

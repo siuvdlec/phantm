@@ -15,7 +15,7 @@ object Main {
     var settings = Settings()
     var displayUsage = false
     var displayVersion = false
-    var files = List[String]()
+    var files: List[String] = List[String]()
 
     def main(args: Array[String]): Unit = {
         if (args.length > 0) {
@@ -28,7 +28,7 @@ object Main {
                     usage
                 }
             } else {
-                if (files.length == 0) {
+                if (files.isEmpty) {
                     println("No file provided.")
                     usage
                 } else {
